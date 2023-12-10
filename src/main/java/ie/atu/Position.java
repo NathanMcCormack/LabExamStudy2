@@ -1,18 +1,29 @@
 package ie.atu;
 
 public class Position extends Employee {
+    private String position;
     private int salary;
     private int hours;
 
     public Position() {
         this.salary = 0;
         this.hours = 0;
+        this.position = "";
     }
 
-    public Position(String name, int age, int empNum, String department, int salary, int hours) {
+    public Position(String position, String name, int age, int empNum, String department, int salary, int hours) {
         super(name, age, empNum, department);
+        this.position = position;
         this.salary = salary;
         this.hours = hours;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public int getSalary() {
@@ -34,7 +45,8 @@ public class Position extends Employee {
     @Override
     public String toString() {
         return super.toString() + " ,Position: " +
-                "salary: " + salary +
+                position +
+                ", salary: " + salary +
                 ", hours: " + hours;
     }
 }
